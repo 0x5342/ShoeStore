@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <!-- Login screen -->
+    <string name="email_label">EMAIL:</string>
+    <string name="email_address_hint">Enter email address</string>
+    <string name="password_label">PASSWORD:</string>
+    <string name="password_hint">Enter password</string>
+    <string name="create_new_login">Create new login</string>
+    <string name="log_in">Log In</string>
+    <!-- Welcome screen -->
+    <string name="welcome">Welcome</string>
+    <string name="company_name">Sal\'s Superior Selection of Soles</string>
+    <string name="app_description">Shoe Store Inventory App</string>
+    <!-- Instructions screen -->
+    <string name="instructions_label">Instructions</string>
+    <string name="view_instructions">View Instructions</string>
+    <string name="instructions_heading">Instructions for using the app</string>
+    <string name="instructions">The initial login screen gives two options:\n\n<b>1.</b> Enter an existing account\'s email address and password followed by clicking the <b>LOG IN</b> button\n\n<b><i>or</i></b>\n\n<b>2.</b> Creating a new account by entering an email address and password followed by clicking on the <b>CREATE NEW LOGIN</b> button</string>
+    <string name="view_shoe_list">View shoe list</string>
+    <!-- Shoe list screen -->
+    <string name="shoe_list_label">Shoe List</string>
+    <string name="add_shoe">Add a shoe</string>
+    <!-- Shoe detail screen -->
+    <string name="shoe_detail_label">Add A Shoe</string>
+    <string name="shoe_name">Shoe Name: </string>
+    <string name="enter_shoe_name">Enter Shoe Name</string>
+    <string name="company">Company: </string>
+    <string name="enter_company_name">Enter company name</string>
+    <string name="shoe_size">"Shoe size: "</string>
+    <string name="enter_shoe_size">Enter shoe size</string>
+    <string name="description">"Description: "</string>
+    <string name="enter_description">Enter description of shoe</string>
+    <string name="cancel">Cancel</string>
+    <string name="save_new_shoe">Save New Shoe</string>
+    <string name="log_out">Log Out</string>
+</resources>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ShoeDetailFragment">
+
+    <data>
+        <variable
+            name="sharedViewModel"
+            type="com.udacity.shoestore.SharedViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/shoeDetailLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/shoeNameLabel"
+            style="@style/field_labels_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/shoe_name"
+            app:layout_constraintEnd_toStartOf="@+id/shoeNameEditText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/shoeNameEditText"
+            style="@style/field_edit_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/enter_shoe_name"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:text="@={sharedViewModel.newShoe.name}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/shoeNameLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/shoeNameLabel" />
+
+        <TextView
+            android:id="@+id/companyLabel"
+            style="@style/field_labels_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/company"
+            app:layout_constraintEnd_toStartOf="@+id/companyEditText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoeNameLabel" />
+
+        <EditText
+            android:id="@+id/companyEditText"
+            style="@style/field_edit_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/enter_company_name"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:text="@={sharedViewModel.newShoe.company}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/companyLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/companyLabel" />
+
+        <TextView
+            android:id="@+id/shoeSizeLabel"
+            style="@style/field_labels_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/shoe_size"
+            app:layout_constraintEnd_toStartOf="@+id/shoeSizeEditText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/companyLabel" />
+
+        <EditText
+            android:id="@+id/shoeSizeEditText"
+            style="@style/field_edit_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/enter_shoe_size"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:text="@={sharedViewModel.newShoeSizeText}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/shoeSizeLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/shoeSizeLabel" />
+
+        <TextView
+            android:id="@+id/descriptionLabel"
+            style="@style/field_labels_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/description"
+            app:layout_constraintEnd_toStartOf="@+id/descriptionEditText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoeSizeLabel" />
+
+        <EditText
+            android:id="@+id/descriptionEditText"
+            style="@style/field_edit_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/enter_description"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:maxLength="100"
+            android:text="@={sharedViewModel.newShoe.description}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/descriptionLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/descriptionLabel" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:onClick="@{() -> sharedViewModel.eventSaveOrCancel()}"
+            android:text="@android:string/cancel"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/saveNewShoeButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/saveNewShoeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> sharedViewModel.saveNewShoe()}"
+            android:text="@string/save_new_shoe"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toBottomOf="@+id/cancelButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cancelButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
